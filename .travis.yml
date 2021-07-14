@@ -1,8 +1,8 @@
 ---
 language: node_js
-node_js:
-  - '10'
+node_js: 10
 
+os: linux
 dist: xenial
 
 addons:
@@ -16,7 +16,6 @@ jobs:
 
 env:
   global:
-    # See https://git.io/vdao3 for details.
     - JOBS=1
 
 before_install:
