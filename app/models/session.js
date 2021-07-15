@@ -1,7 +1,8 @@
 import Model, { attr } from '@ember-data/model';
 
-export default class SignupModel extends Model {
+export default class SessionModel extends Model {
   @attr('string') name;
   @attr('string') email;
   @attr('string') password;
+  @attr('string') token;
 }

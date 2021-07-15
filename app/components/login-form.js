@@ -1,31 +1,29 @@
 import Component from '@glimmer/component';
-import { action } from '@ember/object';
 import { tracked } from '@glimmer/tracking';
+import { action } from '@ember/object';
 import { inject as service } from '@ember/service';
 
-export default class SignupFormComponent extends Component {
+export default class LoginFormComponent extends Component {
   @service store;
   @service session;
 
-  @tracked name = '';
   @tracked email = '';
   @tracked password = '';
   @tracked errors = [];
 
-  @action async signup(event) {
+  @action async login(event) {
     event.preventDefault();
-
-    const userRecord = this.store.createRecord('user', {
-      name: this.name,
+    const authRecord = this.store.createRecord('session', {
       email: this.email,
       password: this.password,
     });
 
     try {
-      const response = await userRecord.save();
+      const response = await authRecord.save();
       this.session.loginUserWithToken(response.token);
     } catch (error) {
       this.errors = error.errors;
+      console.log(this.errors);
     }
   }
 
@@ -34,7 +32,7 @@ export default class SignupFormComponent extends Component {
   }
 
   get isDisabled() {
-    const fields = [this.name, this.email, this.password];
+    const fields = [this.email, this.password];
     return fields.some((field) => field.length === 0);
   }
 }
