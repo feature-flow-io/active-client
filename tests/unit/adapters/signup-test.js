@@ -6,7 +6,7 @@ module('Unit | Adapter | sign up', function (hooks) {
 
   // Replace this with your real tests.
   test('it exists', function (assert) {
-    let adapter = this.owner.lookup('adapter:sign-up');
+    let adapter = this.owner.lookup('adapter:signup');
     assert.ok(adapter);
   });
 });

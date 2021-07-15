@@ -5,6 +5,7 @@ import { inject as service } from '@ember/service';
 
 export default class SignupFormComponent extends Component {
   @service store;
+  @service session;
 
   @tracked name = '';
   @tracked email = '';
@@ -15,13 +16,22 @@ export default class SignupFormComponent extends Component {
     event.preventDefault();
 
     try {
-      const userRecord = await this.store.createRecord('sign-up', {
-        name: this.name,
-        email: this.email,
-        password: this.password,
+      const response = await fetch('/v1/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          data: {
+            attributes: {
+              name: this.name,
+              email: this.email,
+              password: this.password,
+            },
+          },
+        }),
       });
 
-      await userRecord.save();
+      const { data } = await response.json();
+      this.session.loginUserWithToken(data.attributes.auth_token);
     } catch (error) {
       this.errors = error.errors;
     }

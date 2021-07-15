@@ -1,6 +1,6 @@
 import ApplicationAdapter from './application';
 
-export default class SignUpAdapter extends ApplicationAdapter {
+export default class SignupAdapter extends ApplicationAdapter {
   pathForType() {
     return 'users';
   }
