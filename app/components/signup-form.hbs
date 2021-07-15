@@ -1,0 +1,15 @@
+<form {{on "submit" this.signup}}>
+  <label for="name">Name</label>
+  <Input @type="text" id="name" {{on "input" (fn this.update "name")}} required />
+  <p>{{field-error this.errors type="first_name"}}</p>
+
+  <label for="email">Email address</label>
+  <Input @type="email" id="email" {{on "input" (fn this.update "email")}} required />
+  <p>{{field-error this.errors type="email"}}</p>
+
+  <label for="password">Password</label>
+  <Input @type="password" id="password" {{on "input" (fn this.update "password")}} required />
+  <p>{{field-error this.errors type="password"}}</p>
+
+  <button type="submit" disabled={{this.isDisabled}}>Sign up</button>
+</form>
