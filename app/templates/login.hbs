@@ -1,5 +1,23 @@
 {{page-title "Login"}}
 
-<h1>Login form</h1>
+<main class="flex justify-center min-h-screen bg-gray-light py-8">
+  <div class="w-full">
+    <div class="text-center mb-2">
+      <img src="logo.svg" alt="Feature flow" class="h-14 w-auto mx-auto">
+    </div>
 
-<LoginForm />
+    <h1 class="h2 text-center">
+      Sign in to your account
+    </h1>
+
+    <div class="box box--mktg mt-6 shadow-lg max-w-md w-full mx-auto">
+      <div class="box-body">
+        <LoginForm />
+      </div>
+    </div>
+
+    <div class="text-center mt-6">
+      Don't have an account? <LinkTo @route="signup">Sign up</LinkTo>
+    </div>
+  </div>
+</main>
