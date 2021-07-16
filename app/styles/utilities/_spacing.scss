@@ -1,0 +1,33 @@
+@each $breakpoint in map-keys($breakpoints) {
+  @include breakpoint($breakpoint) {
+    $bp-sort: breakpoint-infix($breakpoint, $breakpoints);
+
+    @each $prop, $initial in (margin: m, padding: p) {
+      @each $scale, $size in $spacer-map {
+        .#{$bp-sort}#{$initial}-#{$scale} {
+          #{$prop}: $size !important;
+        }
+
+        .#{$bp-sort}#{$initial}t-#{$scale},
+        .#{$bp-sort}#{$initial}y-#{$scale} {
+          #{$prop}-top: $size !important;
+        }
+
+        .#{$bp-sort}#{$initial}b-#{$scale},
+        .#{$bp-sort}#{$initial}y-#{$scale} {
+          #{$prop}-bottom: $size !important;
+        }
+
+        .#{$bp-sort}#{$initial}l-#{$scale},
+        .#{$bp-sort}#{$initial}x-#{$scale} {
+          #{$prop}-left: $size !important;
+        }
+
+        .#{$bp-sort}mr-#{$scale},
+        .#{$bp-sort}mx-#{$scale} {
+          #{$prop}-right: $size !important;
+        }
+      }
+    }
+  }
+}

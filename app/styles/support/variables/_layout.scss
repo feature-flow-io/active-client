@@ -1,0 +1,66 @@
+// these are values for the display CSS property
+$display-values: (
+  block,
+  flex,
+  inline,
+  inline-block,
+  inline-flex,
+  none,
+  table,
+  table-cell
+);
+
+$spacer: 8px !default;
+
+// Our spacing scale
+$spacer-0: 0; // 0
+$spacer-1: $spacer * 0.5; // 4px
+$spacer-2: $spacer; // 8px
+$spacer-3: $spacer * 2; // 16px
+$spacer-4: $spacer * 3; // 24px
+$spacer-5: $spacer * 4; // 32px
+$spacer-6: $spacer * 5; // 40px
+$spacer-7: $spacer * 6; // 48px
+$spacer-8: $spacer * 8; // 64px
+
+$spacer-map: (
+  0: $spacer-0,
+  1: $spacer-1,
+  2: $spacer-2,
+  3: $spacer-3,
+  4: $spacer-4,
+  5: $spacer-5,
+  6: $spacer-6,
+  7: $spacer-7,
+  8: $spacer-8,
+);
+
+// Size scale
+// Used for buttons, inputs, labels, avatars etc.
+$size: 16px;
+
+$size-0: 0;
+$size-1: $size; // 16px
+$size-2: $size-1 + 4px; // 20px
+$size-3: $size-2 + 4px; // 24px
+$size-4: $size-3 + 4px; // 28px
+$size-5: $size-4 + 4px; // 32px
+$size-6: $size-5 + 8px; // 40px
+$size-7: $size-6 + 8px; // 48px
+$size-8: $size-7 + 16px; // 64px
+
+// breakpoint widths;
+$width-xs: 0;
+$width-sm: 544px;
+$width-md: 768px;
+$width-lg: 1024px;
+$width-xl: 1280px;
+
+// breakpoints
+$breakpoints: (
+  xs: $width-xs,
+  sm: $width-sm,
+  md: $width-md,
+  lg: $width-lg,
+  xl: $width-xl,
+);
