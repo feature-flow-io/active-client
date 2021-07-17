@@ -1,0 +1,14 @@
+$flex-justify: (
+  center: center,
+  between: space-between,
+);
+
+@each $position, $prop in $flex-justify {
+  .justify-#{$position} {
+    justify-content: $prop !important;
+  }
+}
+
+.items-center {
+  align-items: center !important;
+}

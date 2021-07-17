@@ -1,0 +1,40 @@
+// height
+.min-h-screen {
+  min-height: 100vh !important;
+}
+
+.h-14 {
+  height: 56px !important;
+}
+
+// width
+.w-full {
+  width: 100% !important;
+}
+
+.w-auto {
+  width: auto !important;
+}
+
+// max-width
+.max-w-md {
+  max-width: 28rem !important;
+}
+
+// position
+.relative {
+  position: relative !important;
+}
+
+.absolute {
+  position: absolute !important;
+}
+
+// overflow
+.overflow-y-hidden {
+  overflow-y: hidden !important;
+}
+
+.overflow-y-auto {
+  overflow-y: auto !important;
+}

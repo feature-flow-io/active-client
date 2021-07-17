@@ -1,11 +1,23 @@
 <form {{on "submit" this.login}}>
-  <label for="email">Email address</label>
-  <Input @type="email" id="email" {{on "input" (fn this.update "email")}} required />
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <Input @type="email" id="email" class="form-control form-control--lg" {{on "input" (fn this.update "email")}} required />
+  </div>
 
-  <label for="password">Password</label>
-  <Input @type="password" id="password" {{on "input" (fn this.update "password")}} required />
+  <div class="form-group">
+    <div class="form-group-header flex justify-between">
+      <label for="password">Password</label>
+      <a href="#">Forgot password?</a>
+    </div>
 
-  <p>{{field-error this.errors type="invalid"}}</p>
+    <Input @type="password" id="password" class="form-control form-control--lg" {{on "input" (fn this.update "password")}} required />
+  </div>
 
-  <button type="submit" disabled={{this.isDisabled}}>Login</button>
+  <Form::Error @errors={{this.errors}} @errorType="invalid" />
+
+  <div class="form-group">
+    <button type="submit" class="btn btn--primary btn--lg btn--block" disabled={{this.isDisabled}}>
+      Login
+    </button>
+  </div>
 </form>
