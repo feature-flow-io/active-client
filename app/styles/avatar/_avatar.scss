@@ -1,0 +1,18 @@
+.avatar {
+  display: inline-block;
+  overflow: hidden;
+  line-height: $lh-condensed-ultra;
+  vertical-align: middle;
+  border-radius: $border-radius;
+  flex-shrink: 0;
+}
+
+// sizes
+@mixin avatar-size($size) {
+  width: $size;
+  height: $size;
+}
+
+.avatar--5 {
+  @include avatar-size($size-5);
+}

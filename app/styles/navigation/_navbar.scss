@@ -1,0 +1,31 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: $header-height;
+  box-shadow: $shadow-sm;
+  padding-left: $spacer-5;
+  padding-right: $spacer-5;
+  background-color: $bg-white;
+  position: relative;
+  z-index: 10;
+}
+
+.navbar-link {
+  color: $text-gray;
+  line-height: $lh-default-px;
+  font-weight: $font-weight-medium;
+
+  &:hover {
+    color: $text-gray-dark;
+    text-decoration: none;
+  }
+
+  &:not(:first-of-type) {
+    margin-left: $spacer-4;
+  }
+
+  &.active {
+    color: $text-gray-dark;
+  }
+}
