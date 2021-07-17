@@ -1,0 +1,21 @@
+<form {{on "submit" this.createAccount}}>
+  <div class="form-group">
+    <label for="account-name">Account name</label>
+    <Input @type="text" id="account-name" class="form-control form-control--lg" {{on "input" (fn this.update "name")}} autocomplete="off" />
+  </div>
+
+  <div class="form-group">
+    <div class="form-group-header flex items-center">
+      <label for="subdomain">Subdomain</label>
+      <span class="ml-1">(cannot be changed later)</span>
+    </div>
+
+    <Input @type="text" id="subdomain" class="form-control form-control--lg" {{on "input" (fn this.update "subdomain")}} autocomplete="off" />
+  </div>
+
+  <div class="form-group">
+    <button type="submit" class="btn btn--primary btn--lg btn--block" disabled={{this.isDisabled}}>
+      Let's get started
+    </button>
+  </div>
+</form>

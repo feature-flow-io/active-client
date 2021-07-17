@@ -9,4 +9,8 @@ export default class SessionService extends Service {
   loginUserWithToken(token) {
     this.cookies.write(AUTH_TOKEN, token);
   }
+
+  get currentUserToken() {
+    return this.cookies.read(AUTH_TOKEN);
+  }
 }

@@ -1,4 +1,4 @@
-{{page-title "Login"}}
+{{page-title "Onboarding"}}
 
 <main class="flex justify-center min-h-screen bg-gray-light py-8">
   <div class="w-full">
@@ -7,17 +7,13 @@
     </div>
 
     <h1 class="h2 text-center">
-      Sign in to your account
+      Let's get started by creating an account
     </h1>
 
     <div class="box box--mktg mt-6 shadow-lg max-w-md w-full mx-auto">
       <div class="box-body">
-        <LoginForm />
+        <Account::NewForm />
       </div>
-    </div>
-
-    <div class="text-center mt-6">
-      Don't have an account? <LinkTo @route="signup">Sign up</LinkTo>
     </div>
   </div>
 </main>

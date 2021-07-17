@@ -6,6 +6,7 @@ import { inject as service } from '@ember/service';
 export default class SignupFormComponent extends Component {
   @service store;
   @service session;
+  @service router;
 
   @tracked name = '';
   @tracked email = '';
@@ -24,6 +25,7 @@ export default class SignupFormComponent extends Component {
     try {
       const response = await userRecord.save();
       this.session.loginUserWithToken(response.token);
+      this.router.transitionTo('accounts.new');
     } catch (error) {
       this.errors = error.errors;
     }

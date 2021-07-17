@@ -1,0 +1,58 @@
+<header class="navbar">
+  <div class="flex items-center">
+    <img src="/logo.svg" alt="Feature flow" class="h-8 w-auto" />
+
+    <nav class="ml-5">
+      <LinkTo @route="accounts.account" @model={{@account}} class="navbar-link">
+        Requested features
+      </LinkTo>
+
+      <a href="#" class="navbar-link">
+        Roadmap
+      </a>
+
+      <LinkTo
+        @route="accounts.account.settings"
+        @model={{@account}}
+        class="navbar-link"
+      >
+        Settings
+      </LinkTo>
+    </nav>
+  </div>
+
+  <div class="flex items-center">
+    <a href="#" class="btn btn--sm">
+      <Svg @icon="external-link" @size="16px" />
+      <span>View site</span>
+    </a>
+
+    <Dropdown @class="ml-3 dropdown" as |isHidden actions|>
+      <button type="button" {{on "click" actions.toggleVisibility}}>
+        <img
+          class="avatar avatar--5 rounded-full"
+          src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2.25&w=256&h=256&q=80"
+          alt="Abeid Ahmed"
+        />
+      </button>
+
+      <ul class="dropdown-menu" hidden={{isHidden}}>
+        <li>
+          <a href="#" class="dropdown-item">
+            <Svg @icon="user-setting" />
+            Profile
+          </a>
+        </li>
+
+        <li class="dropdown-separator"></li>
+
+        <li>
+          <a href="#" class="dropdown-item">
+            <Svg @icon="logout" />
+            Logout
+          </a>
+        </li>
+      </ul>
+    </Dropdown>
+  </div>
+</header>
