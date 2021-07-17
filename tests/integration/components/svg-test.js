@@ -22,7 +22,7 @@ module('Integration | Component | svg', function (hooks) {
 
     assert.equal(
       this.element.querySelector('svg').getAttribute('width'),
-      '20px'
+      '18px'
     );
   });
 

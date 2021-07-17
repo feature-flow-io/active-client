@@ -1,0 +1,8 @@
+<div class={{@class}} {{on-click-outside this.hideVisibility}}>
+  {{yield
+    this.isHidden
+    (hash
+      toggleVisibility=this.toggleVisibility hideVisibility=this.hideVisibility
+    )
+  }}
+</div>
