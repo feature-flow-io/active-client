@@ -23,7 +23,6 @@ export default class LoginFormComponent extends Component {
       this.session.loginUserWithToken(response.token);
     } catch (error) {
       this.errors = error.errors;
-      console.log(this.errors);
     }
   }
 
