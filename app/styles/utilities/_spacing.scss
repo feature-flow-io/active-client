@@ -23,9 +23,23 @@
           #{$prop}-left: $size !important;
         }
 
-        .#{$bp-sort}mr-#{$scale},
-        .#{$bp-sort}mx-#{$scale} {
+        .#{$bp-sort}#{$initial}r-#{$scale},
+        .#{$bp-sort}#{$initial}x-#{$scale} {
           #{$prop}-right: $size !important;
+        }
+      }
+    }
+
+    @each $scale, $size in $spacer-map {
+      @if $scale != 0 {
+        .#{$bp-sort}-ml-#{$scale},
+        .#{$bp-sort}-mx-#{$scale} {
+          margin-left: -$size !important;
+        }
+
+        .#{$bp-sort}-mr-#{$scale},
+        .#{$bp-sort}-mx-#{$scale} {
+          margin-right: -$size !important;
         }
       }
     }

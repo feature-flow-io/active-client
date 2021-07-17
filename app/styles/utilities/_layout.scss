@@ -20,6 +20,10 @@
   width: auto !important;
 }
 
+.w-64 {
+  width: 256px !important;
+}
+
 // max-width
 .max-w-md {
   max-width: 28rem !important;
@@ -41,4 +45,9 @@
 
 .overflow-y-auto {
   overflow-y: auto !important;
+}
+
+// box-sizing
+.content-box {
+  box-sizing: content-box;
 }

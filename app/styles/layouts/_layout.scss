@@ -1,0 +1,12 @@
+.main-content {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: $spacer-5;
+}
+
+.content-wrapper {
+  width: 100%;
+  height: calc(100vh - #{$header-height});
+  overflow-y: auto;
+}

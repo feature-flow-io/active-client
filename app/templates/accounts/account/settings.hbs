@@ -1,2 +1,37 @@
 {{page-title "Settings"}}
-{{outlet}}
+
+<div class="content-wrapper bg-gray-light">
+  <main class="main-content">
+    <div class="flex -mx-3">
+      <aside class="w-64 content-box px-3">
+        <nav class="sidenav sidenav--sticky">
+          <LinkTo @route="accounts.account.settings.index" class="sidenav-item">
+            <Svg @icon="cog" />
+            General settings
+          </LinkTo>
+
+          <a href="#" class="sidenav-item">
+            <Svg @icon="draft" />
+            Custom domain
+          </a>
+
+          <a href="#" class="sidenav-item">
+            <Svg @icon="team" />
+            Team members
+          </a>
+
+          <a href="#" class="sidenav-item">
+            <Svg @icon="dollar" />
+            Billings
+          </a>
+        </nav>
+      </aside>
+
+      <div class="px-3 flex-1">
+        <div class="box">
+          <div class="box-body">{{outlet}}</div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
