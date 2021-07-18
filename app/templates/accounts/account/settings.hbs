@@ -18,10 +18,13 @@
             Custom domain
           </LinkTo>
 
-          <a href="#" class="sidenav-item">
+          <LinkTo
+            @route="accounts.account.settings.collaborators"
+            class="sidenav-item"
+          >
             <Svg @icon="team" />
             Team members
-          </a>
+          </LinkTo>
 
           <a href="#" class="sidenav-item">
             <Svg @icon="dollar" />

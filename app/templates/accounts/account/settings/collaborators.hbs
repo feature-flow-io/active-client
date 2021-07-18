@@ -1,0 +1,32 @@
+<section class="section">
+  <Subhead @title="Manage your team members" />
+
+  <div class="flex items-center justify-between">
+    <div class="search-form max-w-sm w-full">
+      <label for="search-member" class="sr-only">Search members by name, email</label>
+      <input
+        type="text"
+        id="search-member"
+        class="form-control"
+        placeholder="Search members by name, email..."
+        autocomplete="off"
+      />
+
+      <div class="search-form-icon">
+        <Svg @icon="search" />
+      </div>
+    </div>
+
+    <button type="button" class="btn btn--primary">Invite a collaborator</button>
+  </div>
+
+  <div class="mt-4">
+    <h2 class="h6">These people are currently in your team</h2>
+
+    <div class="mt-3 grid grid-cols-2 gap-4">
+      <Collaborator />
+      <Collaborator />
+      <Collaborator />
+    </div>
+  </div>
+</section>

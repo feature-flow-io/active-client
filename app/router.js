@@ -15,6 +15,7 @@ Router.map(function () {
     this.route('account', { path: ':account_id' }, function () {
       this.route('settings', function () {
         this.route('domain');
+        this.route('collaborators');
       });
     });
   });
