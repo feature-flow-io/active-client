@@ -1,0 +1,5 @@
+.divide-y > * + * {
+  border-top: $border !important;
+  margin-top: $spacer-3 !important;
+  padding-top: $spacer-3 !important;
+}
