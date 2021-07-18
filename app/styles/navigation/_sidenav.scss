@@ -1,0 +1,40 @@
+.sidenav {
+  flex-shrink: 0;
+}
+
+.sidenav-item {
+  display: flex;
+  align-items: center;
+  padding: $spacer-2;
+  line-height: $lh-default-px;
+  color: $text-gray;
+  border-radius: $border-radius;
+  border: $border-width $border-style transparent;
+  font-weight: $font-weight-medium;
+
+  .remix {
+    margin-right: $spacer-2;
+    color: $text-gray-light;
+  }
+
+  &:not(:first-of-type) {
+    margin-top: $spacer-1;
+  }
+
+  &:hover {
+    text-decoration: none;
+    color: $indigo-600;
+  }
+
+  &.active {
+    background-color: $bg-white;
+    box-shadow: $shadow-sm;
+    border-color: $border-gray;
+    color: $text-gray-dark;
+  }
+}
+
+.sidenav--sticky {
+  position: sticky;
+  top: $spacer-5;
+}

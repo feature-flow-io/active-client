@@ -87,6 +87,45 @@
   }
 }
 
+.btn--danger {
+  color: $text-white;
+  background-color: $bg-red;
+  border-color: $border-red;
+
+  &:hover {
+    background-color: $red-700;
+  }
+
+  &:active {
+    background-color: $bg-red;
+  }
+
+  &:disabled,
+  &.disabled,
+  &[aria-disabled='true'] {
+    background-color: $bg-red;
+    opacity: 0.5;
+
+    &:hover {
+      background-color: $bg-red;
+    }
+  }
+}
+
+.btn--danger-outline {
+  color: $text-red;
+
+  &:hover {
+    background-color: $red-700;
+    color: $text-white;
+  }
+
+  &:active {
+    background-color: $bg-red;
+    color: $text-white;
+  }
+}
+
 .btn--sm {
   padding: 4px 12px;
   font-size: 13px;

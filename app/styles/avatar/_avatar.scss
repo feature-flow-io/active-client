@@ -16,3 +16,7 @@
 .avatar--5 {
   @include avatar-size($size-5);
 }
+
+.avatar--6 {
+  @include avatar-size($size-6);
+}

@@ -1,0 +1,33 @@
+<section class="section">
+  <Subhead
+    @title="Manage your custom domain"
+    @description="CNAME should not contain spaces, http:// or https://. By default we’ll try to force ssl your feature requests page."
+  />
+
+  <div>
+    <h3 class="h6">Feature Flow provided domain:</h3>
+
+    <a href="#" class="inline-flex items-center">
+      https://example.com
+      <Svg @icon="external-link" @size="16px" @class="ml-1 text-gray-light" />
+    </a>
+  </div>
+
+  <form class="mt-4 max-w-sm w-full">
+    <div class="form-group">
+      <label for="account-cname">CNAME</label>
+
+      <div class="flex items-center">
+        <input
+          type="text"
+          id="account-cname"
+          class="form-control"
+          placeholder="Eg. subdomain.example.com"
+          autocomplete="off"
+        />
+
+        <button type="submit" class="ml-2 btn btn--primary">Save</button>
+      </div>
+    </div>
+  </form>
+</section>
