@@ -19,12 +19,14 @@ module('Acceptance | general setting', function (hooks) {
     await visit(`/accounts/${account.id}/settings`);
 
     assert.equal(currentURL(), `/accounts/${account.id}/settings`);
+    const submitBtn = find('button[data-test-id="rename-button"]');
 
     assert.equal(find('#account-name').value, account.name);
-    assert.true(find('button[data-test-id="rename-button"]').disabled);
+    assert.true(submitBtn.disabled);
 
     await fillIn('#account-name', 'My new updated account');
-    await click('button[data-test-id="rename-button"]');
+    assert.false(submitBtn.disabled);
+    await click(submitBtn);
     assert.equal(
       this.server.db.accounts.find(account.id).name,
       'My new updated account'

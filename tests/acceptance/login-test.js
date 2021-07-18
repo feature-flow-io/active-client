@@ -17,12 +17,14 @@ module('Acceptance | login', function (hooks) {
     await visit('/login');
 
     assert.equal(currentURL(), '/login');
-    assert.true(find('button[data-test-id="login-button"]').disabled);
+    const submitBtn = find('button[data-test-id="login-button"]');
+
+    assert.true(submitBtn.disabled);
 
     await fillIn('#email', user.email);
     await fillIn('#password', user.password);
-    assert.false(find('button[data-test-id="login-button"]').disabled);
-    await click('button[data-test-id="login-button"]');
+    assert.false(submitBtn.disabled);
+    await click(submitBtn);
 
     assert.equal(
       this.owner.lookup('service:session').currentUserToken,

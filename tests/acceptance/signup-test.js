@@ -16,13 +16,15 @@ module('Acceptance | signup', function (hooks) {
     await visit('/signup');
 
     assert.equal(currentURL(), '/signup');
-    assert.true(find('button[data-test-id="signup-button"]').disabled);
+    const submitBtn = find('button[data-test-id="signup-button"]');
+
+    assert.true(submitBtn.disabled);
 
     await fillIn('#name', 'John Doe');
     await fillIn('#email', 'john@yaoo.com');
     await fillIn('#password', 'specialsecret');
-    assert.false(find('button[data-test-id="signup-button"]').disabled);
-    await click('button[data-test-id="signup-button"]');
+    assert.false(submitBtn.disabled);
+    await click(submitBtn);
 
     const user = this.server.db.users[0];
 
