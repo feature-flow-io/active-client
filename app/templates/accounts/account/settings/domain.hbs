@@ -13,21 +13,5 @@
     </a>
   </div>
 
-  <form class="mt-4 max-w-sm w-full">
-    <div class="form-group">
-      <label for="account-cname">CNAME</label>
-
-      <div class="flex items-center">
-        <input
-          type="text"
-          id="account-cname"
-          class="form-control"
-          placeholder="Eg. subdomain.example.com"
-          autocomplete="off"
-        />
-
-        <button type="submit" class="ml-2 btn btn--primary">Save</button>
-      </div>
-    </div>
-  </form>
+  <Account::CnameForm @account={{this.model}} />
 </section>
