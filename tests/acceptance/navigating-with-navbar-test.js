@@ -10,7 +10,8 @@ module('Acceptance | navigating with navbar', function (hooks) {
 
   hooks.beforeEach(function () {
     this.owner.register('service:session', MockSessionService);
-    this.owner.lookup('service:session').currentUserToken = '1';
+    const user = this.server.create('user');
+    this.owner.lookup('service:session').currentUserToken = user.token;
   });
 
   test('visiting /accounts/:id', async function (assert) {
