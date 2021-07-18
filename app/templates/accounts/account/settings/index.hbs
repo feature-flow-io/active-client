@@ -1,48 +1,15 @@
 <section class="section">
   <Subhead @title="Account general settings" />
-
   <Account::RenameForm @account={{this.model}} />
 </section>
 
-<section class="section">
-  <Subhead
-    @title="Activate your account"
-    @description="Your account is deactivated. If you ever need to activate it, press the button below."
-  />
-
-  <button type="button" class="btn mt-3">Activate account</button>
-</section>
+<Account::Activate @account={{this.model}} />
 
 <section class="section">
   <Subhead @title="Danger zone" @danger="true" />
 
   <div class="divide-y">
-    <div>
-      <h3 class="h6">Deactivate your account</h3>
-
-      <p class="mt-1">
-        This will immediately deactivate your account and will render a 404 for
-        your
-        <a href="#">public feature requests</a>
-        page.
-      </p>
-
-      <button type="button" class="btn btn--danger-outline mt-3">
-        Deactivate account
-      </button>
-    </div>
-
-    <div>
-      <h3 class="h6">Delete your account</h3>
-
-      <p class="mt-1">
-        This will permanently delete your account and will cancel your
-        subscription too. Proceed with caution.
-      </p>
-
-      <button type="button" class="btn btn--danger-outline mt-3">
-        Delete account
-      </button>
-    </div>
+    <Account::Deactivate @account={{this.model}} />
+    <Account::Delete />
   </div>
 </section>

@@ -1,0 +1,10 @@
+{{#if (eq @account.status "inactive")}}
+  <section class="section">
+    <Subhead
+      @title="Activate your account"
+      @description="Your account is deactivated. If you ever need to activate it, press the button below."
+    />
+
+    <button type="button" class="btn mt-3">Activate account</button>
+  </section>
+{{/if}}
