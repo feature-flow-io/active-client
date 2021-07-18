@@ -1,4 +1,4 @@
-import { Factory } from 'ember-cli-mirage';
+import { Factory, belongsTo } from 'ember-cli-mirage';
 
 export default Factory.extend({
   name: 'My company',
@@ -9,4 +9,5 @@ export default Factory.extend({
     return `example.subdomain${i}.com`;
   },
   status: 'active',
+  user: belongsTo('creator', { inverse: null }),
 });

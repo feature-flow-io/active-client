@@ -1,6 +1,13 @@
 export default function () {
   this.namespace = 'v1';
 
+  // users
+  this.post('/users', function (schema) {
+    const attrs = this.normalizedRequestAttrs();
+
+    return schema.users.create({ ...attrs, token: 'new_token' });
+  });
+
   // sessions
   this.post('/sessions', function (schema) {
     const attrs = this.normalizedRequestAttrs();
