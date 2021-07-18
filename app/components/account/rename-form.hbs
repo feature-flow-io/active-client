@@ -1,0 +1,23 @@
+<form class="max-w-sm w-full" {{on "submit" this.renameAccount}}>
+  <div class="form-group">
+    <label for="account-name">Account name</label>
+
+    <div class="flex items-center">
+      <input
+        type="text"
+        value={{@account.name}}
+        id="account-name"
+        class="form-control"
+        autocomplete="off"
+        required
+        {{on "input" (fn this.update "name")}}
+      />
+
+      <button type="submit" class="btn ml-2" disabled={{this.isDisabled}}>
+        Rename
+      </button>
+    </div>
+
+    <Form::Error @errors={{this.errors}} @errorType="name" />
+  </div>
+</form>
