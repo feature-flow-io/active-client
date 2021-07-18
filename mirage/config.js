@@ -1,6 +1,14 @@
 export default function () {
   this.namespace = 'v1';
 
+  // sessions
+  this.post('/sessions', function (schema) {
+    const attrs = this.normalizedRequestAttrs();
+
+    return schema.sessions.create(attrs);
+  });
+
+  // accounts
   this.post('/accounts', function (schema) {
     const attrs = this.normalizedRequestAttrs();
 

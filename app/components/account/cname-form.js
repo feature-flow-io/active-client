@@ -16,7 +16,6 @@ export default class AccountCnameFormComponent extends Component {
 
     try {
       await account.save();
-      console.log(account);
     } catch (error) {
       this.errors = error.errors;
     }
