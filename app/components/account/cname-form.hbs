@@ -13,7 +13,13 @@
         {{on "input" (fn this.update "cname")}}
       />
 
-      <button type="submit" class="ml-2 btn btn--primary">Save</button>
+      <button
+        type="submit"
+        class="ml-2 btn btn--primary"
+        data-test-id="update-cname"
+      >
+        Save
+      </button>
     </div>
 
     <Form::Error @errors={{this.errors}} @errorType="cname" />

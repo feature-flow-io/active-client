@@ -25,6 +25,9 @@ module('Acceptance | general setting', function (hooks) {
 
     await fillIn('#account-name', 'My new updated account');
     await click('button[data-test-id="rename-button"]');
-    assert.equal(this.server.db.accounts[0].name, 'My new updated account');
+    assert.equal(
+      this.server.db.accounts.find(account.id).name,
+      'My new updated account'
+    );
   });
 });
