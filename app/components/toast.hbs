@@ -1,0 +1,33 @@
+<div class="toast-container">
+  {{#each this.notification.notifications as |notification|}}
+    <div
+      class="toast toast--animateIn {{concat "toast--" notification.type}}"
+      id={{notification.id}}
+      role="alert"
+      {{did-insert this.fadeOut}}
+    >
+      <div class="toast-details">
+        <span class="toast-icon">
+          <Svg
+            @icon={{if
+              (eq notification.type "success")
+              "check-solid"
+              "close-solid"
+            }}
+          />
+        </span>
+
+        <p class="toast-content">{{notification.message}}</p>
+      </div>
+
+      <button
+        type="button"
+        class="toast-dismiss-btn"
+        aria-label="Dismiss notification"
+        {{on "click" (fn this.hide notification.id)}}
+      >
+        <Svg @icon="close" />
+      </button>
+    </div>
+  {{/each}}
+</div>

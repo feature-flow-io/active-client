@@ -5,6 +5,7 @@ import { inject as service } from '@ember/service';
 
 export default class AccountRenameFormComponent extends Component {
   @service store;
+  @service notification;
 
   @tracked name = this.account.name;
   @tracked errors = [];
@@ -17,6 +18,10 @@ export default class AccountRenameFormComponent extends Component {
 
     try {
       await account.save();
+      this.notification.notify({
+        message: 'Ok, we got your changes',
+        type: 'success',
+      });
     } catch (error) {
       this.errors = error.errors;
     }
