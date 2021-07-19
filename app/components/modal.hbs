@@ -1,0 +1,12 @@
+{{yield (hash showModal=this.showModal hideModal=this.hideModal) to="trigger"}}
+
+{{#if this.isActive}}
+  <ModalDialog
+    @translucentOverlay={{true}}
+    @containerClassNames="box"
+    @onClose={{this.hideModal}}
+    ...attributes
+  >
+    {{yield (hash showModal=this.showModal hideModal=this.hideModal) to="body"}}
+  </ModalDialog>
+{{/if}}
