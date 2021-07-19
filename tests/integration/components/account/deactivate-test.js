@@ -16,7 +16,7 @@ module('Integration | Component | account/deactivate', function (hooks) {
     assert.dom('button[type="button"]').exists();
   });
 
-  test('it does not redner if the acount status is inactive', async function (assert) {
+  test('it does not render if the account status is inactive', async function (assert) {
     this.set('account', {
       status: 'inactive',
     });

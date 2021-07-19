@@ -5,7 +5,11 @@
     <div class="flex -mx-3">
       <aside class="w-64 content-box px-3">
         <nav class="sidenav sidenav--sticky">
-          <LinkTo @route="accounts.account.settings.index" class="sidenav-item">
+          <LinkTo
+            @route="accounts.account.settings.index"
+            class="sidenav-item"
+            data-test-id="general-settings-link"
+          >
             <Svg @icon="cog" />
             General settings
           </LinkTo>
@@ -13,6 +17,7 @@
           <LinkTo
             @route="accounts.account.settings.domain"
             class="sidenav-item"
+            data-test-id="custom-domain-link"
           >
             <Svg @icon="draft" />
             Custom domain
@@ -21,6 +26,7 @@
           <LinkTo
             @route="accounts.account.settings.collaborators"
             class="sidenav-item"
+            data-test-id="team-members-link"
           >
             <Svg @icon="team" />
             Team members

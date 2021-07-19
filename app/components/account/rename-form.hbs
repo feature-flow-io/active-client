@@ -13,7 +13,12 @@
         {{on "input" (fn this.update "name")}}
       />
 
-      <button type="submit" class="btn ml-2" disabled={{this.isDisabled}}>
+      <button
+        type="submit"
+        class="btn ml-2"
+        disabled={{this.isDisabled}}
+        data-test-id="rename-button"
+      >
         Rename
       </button>
     </div>
