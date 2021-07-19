@@ -5,6 +5,13 @@
       @description="Your account is deactivated. If you ever need to activate it, press the button below."
     />
 
-    <button type="button" class="btn mt-3">Activate account</button>
+    <button
+      type="button"
+      class="btn mt-3"
+      data-test-id="account-activate-btn"
+      {{on "click" (fn this.activateAccount @account.id)}}
+    >
+      Activate account
+    </button>
   </section>
 {{/if}}

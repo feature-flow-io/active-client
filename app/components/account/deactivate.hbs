@@ -14,6 +14,7 @@
         <button
           type="button"
           class="btn btn--danger-outline mt-3"
+          data-test-id="account-deactivate-modal-btn"
           {{on "click" actions.showModal}}
           {{focus-on "click" "account-deactivate-confirm-field"}}
         >
@@ -42,13 +43,15 @@
 
           <p class="mt-2">
             Please type
-            <strong class="h6">Account name</strong>
+            <strong class="h6">{{@account.name}}</strong>
             to continue.
           </p>
 
           <div class="mt-2">
             <label for="account-deactivate-confirm-field" class="sr-only">
-              Please type Account name to continue
+              Please type
+              {{@account.name}}
+              to continue
             </label>
 
             <input
@@ -56,13 +59,14 @@
               id="account-deactivate-confirm-field"
               class="form-control"
               autocomplete="off"
-              {{confirmable "hello" "account-deactivate-submit-btn"}}
+              {{confirmable @account.name "account-deactivate-submit-btn"}}
             />
 
             <button
               type="button"
               id="account-deactivate-submit-btn"
               class="btn btn--danger btn--block mt-2"
+              {{on "click" (fn this.deactivateAccount @account.id)}}
               disabled
             >
               I understand, deactivate this account
