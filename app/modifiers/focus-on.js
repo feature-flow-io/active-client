@@ -8,4 +8,8 @@ export default modifier(function focusOn(element, [eventName, targetElement]) {
   }
 
   element.addEventListener(eventName, handleFocus);
+
+  return () => {
+    element.removeEventListener(eventName, handleFocus);
+  };
 });
