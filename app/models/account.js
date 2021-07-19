@@ -4,6 +4,7 @@ export default class AccountModel extends Model {
   @attr('string') name;
   @attr('string') subdomain;
   @attr('string') cname;
+  @attr('string') status;
   @attr('date') updatedAt;
   @attr('date') createdAt;
 

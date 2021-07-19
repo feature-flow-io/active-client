@@ -49,6 +49,11 @@
   &[aria-disabled='true'] {
     cursor: default;
     box-shadow: none;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: $bg-white;
+    }
   }
 }
 
@@ -79,7 +84,6 @@
   &.disabled,
   &[aria-disabled='true'] {
     background-color: $indigo-600;
-    opacity: 0.5;
 
     &:hover {
       background-color: $indigo-600;
@@ -104,7 +108,6 @@
   &.disabled,
   &[aria-disabled='true'] {
     background-color: $bg-red;
-    opacity: 0.5;
 
     &:hover {
       background-color: $bg-red;

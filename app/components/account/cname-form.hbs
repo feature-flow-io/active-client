@@ -1,0 +1,27 @@
+<form class="mt-4 max-w-sm w-full" {{on "submit" this.updateCname}}>
+  <div class="form-group">
+    <label for="account-cname">CNAME</label>
+
+    <div class="flex items-center">
+      <input
+        type="text"
+        id="account-cname"
+        class="form-control"
+        value={{@account.cname}}
+        placeholder="Eg. subdomain.example.com"
+        autocomplete="off"
+        {{on "input" (fn this.update "cname")}}
+      />
+
+      <button
+        type="submit"
+        class="ml-2 btn btn--primary"
+        data-test-id="update-cname"
+      >
+        Save
+      </button>
+    </div>
+
+    <Form::Error @errors={{this.errors}} @errorType="cname" />
+  </div>
+</form>

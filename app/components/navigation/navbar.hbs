@@ -3,7 +3,12 @@
     <img src="/logo.svg" alt="Feature flow" class="h-8 w-auto" />
 
     <nav class="ml-5">
-      <LinkTo @route="accounts.account" @model={{@account}} class="navbar-link">
+      <LinkTo
+        @route="accounts.account"
+        @model={{@account}}
+        class="navbar-link"
+        data-test-id="feature-link"
+      >
         Requested features
       </LinkTo>
 
@@ -15,6 +20,7 @@
         @route="accounts.account.settings"
         @model={{@account}}
         class="navbar-link"
+        data-test-id="setting-link"
       >
         Settings
       </LinkTo>

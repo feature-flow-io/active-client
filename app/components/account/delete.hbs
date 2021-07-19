@@ -1,0 +1,72 @@
+<div>
+  <h3 class="h6">Delete your account</h3>
+
+  <p class="mt-1">
+    This will permanently delete your account and will cancel your subscription
+    too. Proceed with caution.
+  </p>
+
+  <Modal>
+    <:trigger as |actions|>
+      <button
+        type="button"
+        class="btn btn--danger-outline mt-3"
+        {{on "click" actions.showModal}}
+        {{focus-on "click" "account-delete-confirm-field"}}
+      >
+        Delete account
+      </button>
+    </:trigger>
+
+    <:body as |actions|>
+      <Modal::Header
+        @title="Are you absolutely sure?"
+        @onClose={{actions.hideModal}}
+      />
+
+      <div class="box-body">
+        <p>
+          This action will immediately
+          <span class="text-highlight">delete your account</span>
+          and it's dependents, like, feature requests, upvotes, comments,
+          stages, etc.
+        </p>
+
+        <p class="mt-2">
+          This will also cancel your subscription immediately.
+        </p>
+
+        <p class="mt-2">
+          Please type
+          <strong class="h6">{{@account.name}}</strong>
+          to continue.
+        </p>
+
+        <div class="mt-2">
+          <label for="account-delete-confirm-field" class="sr-only">
+            Please type
+            {{@account.name}}
+            to continue
+          </label>
+
+          <input
+            type="text"
+            id="account-delete-confirm-field"
+            class="form-control"
+            autocomplete="off"
+            {{confirmable @account.name "account-delete-submit-btn"}}
+          />
+
+          <button
+            type="button"
+            id="account-delete-submit-btn"
+            class="btn btn--danger btn--block mt-2"
+            disabled
+          >
+            I understand, delete this account
+          </button>
+        </div>
+      </div>
+    </:body>
+  </Modal>
+</div>

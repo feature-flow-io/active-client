@@ -1,0 +1,79 @@
+{{#if (eq @account.status "active")}}
+  <div>
+    <h3 class="h6">Deactivate your account</h3>
+
+    <p class="mt-1">
+      This will immediately deactivate your account and will render a 404 for
+      your
+      <a href="#">public feature requests</a>
+      page.
+    </p>
+
+    <Modal>
+      <:trigger as |actions|>
+        <button
+          type="button"
+          class="btn btn--danger-outline mt-3"
+          data-test-id="account-deactivate-modal-btn"
+          {{on "click" actions.showModal}}
+          {{focus-on "click" "account-deactivate-confirm-field"}}
+        >
+          Deactivate account
+        </button>
+      </:trigger>
+
+      <:body as |actions|>
+        <Modal::Header
+          @title="Are you absolutely sure"
+          @onClose={{actions.hideModal}}
+        />
+
+        <div class="box-body">
+          <p>
+            This action will immediately deactivate your account and will
+            <span class="text-highlight">render a 404</span>
+            for your public
+            <a href="#">feature requests page</a>.
+          </p>
+
+          <p class="mt-2">
+            This will not change your billing plan. If you want to downgrade or
+            cancel, you can do so in your Settings &gt; Billing
+          </p>
+
+          <p class="mt-2">
+            Please type
+            <strong class="h6">{{@account.name}}</strong>
+            to continue.
+          </p>
+
+          <div class="mt-2">
+            <label for="account-deactivate-confirm-field" class="sr-only">
+              Please type
+              {{@account.name}}
+              to continue
+            </label>
+
+            <input
+              type="text"
+              id="account-deactivate-confirm-field"
+              class="form-control"
+              autocomplete="off"
+              {{confirmable @account.name "account-deactivate-submit-btn"}}
+            />
+
+            <button
+              type="button"
+              id="account-deactivate-submit-btn"
+              class="btn btn--danger btn--block mt-2"
+              {{on "click" (fn this.deactivateAccount @account.id)}}
+              disabled
+            >
+              I understand, deactivate this account
+            </button>
+          </div>
+        </div>
+      </:body>
+    </Modal>
+  </div>
+{{/if}}
