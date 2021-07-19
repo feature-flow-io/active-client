@@ -54,9 +54,16 @@
               type="text"
               id="account-deactivate-confirm-field"
               class="form-control"
+              autocomplete="off"
+              {{confirmable "hello" "account-deactivate-submit-btn"}}
             />
 
-            <button type="button" class="btn btn--danger btn--block mt-2">
+            <button
+              type="button"
+              id="account-deactivate-submit-btn"
+              class="btn btn--danger btn--block mt-2"
+              disabled
+            >
               I understand, deactivate this account
             </button>
           </div>
